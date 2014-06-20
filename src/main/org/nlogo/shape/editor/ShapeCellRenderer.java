@@ -77,8 +77,8 @@ public strictfp class ShapeCellRenderer   // public for DeltaTick - ST 12/2/11
   }
 
   // Method that actually renders the item
-  public java.awt.Component getListCellRendererComponent
-  (javax.swing.JList list, Object value, int index,
+  @Override public java.awt.Component getListCellRendererComponent
+  (javax.swing.JList<? extends String> list, String value, int index,
    boolean isSelected, boolean cellHasFocus) {
     theShape = this.list.getShape(index);
     shapeName.setText(value.toString());

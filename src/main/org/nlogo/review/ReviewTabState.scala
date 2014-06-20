@@ -15,7 +15,7 @@ class ReviewTabState(
   with RecordingToggling {
 
   // ListModel methods:
-  override def getElementAt(index: Int): AnyRef = _runs(index)
+  override def getElementAt(index: Int): ModelRun = _runs(index)
   override def getSize = _runs.size
 
   def runs = _runs

@@ -130,9 +130,10 @@ class ControlCenter(server: ConnectionManager, frame: Frame, serverId: String, a
      * From interface ActionListener.
      */
     def actionPerformed(evt: ActionEvent) {
+      import scala.collection.JavaConverters._
       if (evt.getSource == kickButton) {
-        val clientIds = clientsList.getSelectedValues()
-        for (j <- 0 until clientIds.length) {kickClient(clientIds(j).toString)}
+        val clientIds = clientsList.getSelectedValuesList().asScala
+        for (j <- 0 until clientIds.size) {kickClient(clientIds(j).toString)}
       }
       else if (evt.getSource == newClientButton) {launchNewClient()}
       else if (evt.getSource == reloadButton) {
