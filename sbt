@@ -10,7 +10,6 @@ if [[ `uname -s` == *CYGWIN* ]] ; then
 else
   CURR_DIR=`dirname $0`
   if [ `uname -s` = Linux ] ; then
-    if
     export JAVA_HOME=/usr/lib/jvm/java-7-oracle
   else
     if [ `uname -s` = Darwin ] ; then
