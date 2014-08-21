@@ -12,9 +12,6 @@ else
   if [ `uname -s` = Linux ] ; then
     if [ -a /usr/lib/jvm/java-7-oracle ] ; then
       export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-    elif ! $JAVA_HOME/bin/java -version |& head -n 1 | grep "1\.7" >> /dev/null ; then
-      echo "Please set JAVA_HOME to version 1.7"
-      exit
     fi
   else
     if [ `uname -s` = Darwin ] ; then
